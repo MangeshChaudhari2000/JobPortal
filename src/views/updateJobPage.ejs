@@ -1,0 +1,121 @@
+<div style="background-color: rgb(247, 148, 108); height: 100vh">
+    <div class="mx-auto" style="font-family: cursive; width: 50rem">
+      <form
+        action="/jobs/update/<%=jobInfo.ID%>?_method=PUT"
+        method="POST"
+        class="row g-3 bg-light bg-gradient p-3 border border-warning rounded border-opacity-50 border-5"
+      >
+      <h4 class="text-center text-secondary" style="width: 100rem;"><strong>Update deails</strong></h4>
+        <div class="col">
+          <label for="inputState" aria-placeholder="" class="form-label">Select Job Category</label>
+          <select id="inputState" class="form-select" name="jobcategory" value="<%=jobInfo.jobcategory%>">
+            <option selected>Tech</option>
+            <option>Tech</option>
+            <option>Non Tech</option>
+          </select>
+        </div>
+        <div class="col">
+          <label for="inputState" class="form-label"
+            >Select Job designation</label
+          >
+          <select id="inputState" class="form-select" name="jobdesignation" value="<%=jobInfo.jobdesignation%>" >
+            <option selected><%=jobInfo.jobdesignation%></option>
+            <option>SDE</option>
+            <option>DevOps</option>
+            <option>MERN Developer</option>
+            <option>MEAN Developer</option>
+            <option>JAVA Developer</option>
+            <option>.NET Developer</option>
+          </select>
+        </div>
+        <div class="col-12">
+          <label for="inputAddress" class="form-label">Job Location</label>
+          <input
+            name="joblocation"
+            type="text"
+            class="form-control"
+            id="inputAddress"
+            placeholder="<%=jobInfo.joblocation%>"
+            value="<%=jobInfo.joblocation%>"
+          />
+        </div>
+  
+        <div class="col-12">
+          <div class="input-group">
+            <div class="input-group-text">Company Name</div>
+            <input
+              name="companyname"
+              type="text"
+              class="form-control"
+              id="autoSizingInputGroup"
+              placeholder="<%=jobInfo.companyname%>"
+              value="<%=jobInfo.companyname%>"
+            />
+          </div>
+        </div>
+        <div class="col-6">
+          <div class="input-group">
+            <input
+              name="salary"
+              type="number"
+              class="form-control"
+              id="autoSizingInputGroup"
+              placeholder="<%=jobInfo.salary%>"
+              value="<%=jobInfo.salary%>"
+            />
+          </div>
+        </div>
+        <div class="col-6">
+          <div class="input-group">
+            <div class="input-group-text">Total Positions</div>
+            <input
+              name="numberofopenings"
+              type="number"
+              class="form-control"
+              id="autoSizingInputGroup"
+              placeholder="<%=jobInfo.numberofopenings%>"
+              value="<%=jobInfo.numberofopenings%>"
+            />
+          </div>
+        </div>
+  
+        <div class="col-sm-6">
+          <label class="visually-hidden" for="specificSizeSelect"
+            >Preference</label
+          >
+          <select
+            class="form-select"
+            id="specificSizeSelect"
+            multiple
+            name="skillsrequired"
+            value="<%=jobInfo.skillsrequired%>"
+          >
+            <option selected><%=jobInfo.skillsrequired%></option>
+            <option value="ReactJS">ReactJS</option>
+            <option value="AngularJS">AngularJS</option>
+            <option value="Nodejs">Nodejs</option>
+            <option value="Expressjs">Expressjs</option>
+            <option value="SQL">SQL</option>
+            <option value="MongoDB">MongoDB</option>
+          </select>
+        </div>
+        <div class="col-6">
+          <div class="input-group">
+            <div class="input-group-text">Date of Apply By</div>
+            <!-- <label for="datepicker" class="form-label">Select Date</label> -->
+            <input
+              type="text"
+              class="form-control"
+              id="datepicker"
+              name="applyby"
+              placeholder="<%=jobInfo.applyby%>"
+              value="<%=jobInfo.applyby%>"
+            />
+          </div>
+        </div>
+  
+        <button type="submit" class="btn btn-outline-info">Update Details</button>
+      </form>
+    </div>
+  </div>
+  

@@ -1,0 +1,40 @@
+.container-home {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  position: relative;
+}
+
+*{
+  box-sizing: border-box;
+}
+/* html,body{
+    height: 100%;
+    width:100%;
+    background-color: lightsalmon;
+} */
+
+.detailedJobPage-Background {
+  background-image: url("https://cdn.pixabay.com/photo/2017/10/31/09/55/dream-job-2904780_1280.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 100vh;
+  position: relative;
+}
+
+/* .detailedJobPage-Background::after {
+  content: "";
+  position: absolute;
+  width: 100vw;
+  height: 90vh;
+  backdrop-filter: blur(4px);
+} */
+
+.detailedJobPage-Background::before {
+  content: "";
+  position: absolute;
+  width: 100vw;
+  height: 90vh;
+  backdrop-filter: blur(4px);
+}

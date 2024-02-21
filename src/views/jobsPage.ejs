@@ -1,0 +1,56 @@
+<div
+  class="d-flex align-content-around justify-content-around flex-wrap"
+  style="background-color: lightgrey"
+>
+  <div class="p-1" style="width: 100%">
+    <%if(errorMessage.status==true){%>
+
+    <div class="alert alert-success alert-dismissible fade show" role="alert">
+      <%=errorMessage.message%>
+      <button
+        type="button"
+        class="btn-close"
+        data-bs-dismiss="alert"
+        aria-label="Close"
+      ></button>
+    </div>
+
+    <%}else if(errorMessage.status==false){%>
+    <div class="alert alert-danger alert-dismissible fade show" role="alert">
+      <%=errorMessage.message%>
+      <button
+        type="button"
+        class="btn-close"
+        data-bs-dismiss="alert"
+        aria-label="Close"
+      ></button>
+    </div>
+    <%}else{%> <%}%>
+  </div>
+
+  <%jobList.forEach(data=>{%>
+  <div class="card mt-5 border-warning" style="width: 18rem">
+    <h5 class="card-header bg-warning text-light-emphasis">
+      <%=data.companyname%>
+    </h5>
+
+    <div class="card-body">
+      <h5 class="card-title text-info-emphasis">
+        Designation: <%=data.jobdesignation%>
+      </h5>
+      <p class="card-text">Location: <%=data.joblocation%></p>
+      <p class="card-text">Salary: <%=data.salary%> LPA</p>
+
+      <p class="card-text">
+        Skills Required:
+          <button type="button" class="btn btn-outline-warning">
+            <%=data.skillsrequired%>
+          </button>
+        
+      </p>
+      <a href="/jobs/<%=data.ID%>" class="btn btn-outline-info">View Details</a>
+    </div>
+  </div>
+
+  <%})%>
+</div>

@@ -1,0 +1,90 @@
+<div style="background-color: rgb(243, 153, 117); height: 100vh">
+  <div class="mx-auto bg-light p-3" style="font-family: cursive; width: 35rem">
+    <div class="p-1" style="width: 100%">
+      <%if(errorMessage.status==true){%>
+  
+      <div class="alert alert-success alert-dismissible fade show" role="alert">
+        <%=errorMessage.message%>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="alert"
+          aria-label="Close"
+        ></button>
+      </div>
+  
+      <%}else if(errorMessage.status==false){%>
+      <div class="alert alert-danger alert-dismissible fade show" role="alert">
+        <%=errorMessage.message%>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="alert"
+          aria-label="Close"
+        ></button>
+      </div>
+      <%}else{%> <%}%>
+    </div>
+    <form action="/login" method="post" >
+      <!-- Email input -->
+      <div class="form-outline mb-4">
+        <input
+          type="email"
+          id="form2Example1"
+          class="form-control"
+          name="email"
+          placeholder="abc@gmail.com"
+          required=""
+
+        />
+        <label class="form-label" for="form2Example1">Email address</label>
+      </div>
+
+      <!-- Password input -->
+      <div class="form-outline mb-4">
+        <input
+          type="password"
+          id="form2Example2"
+          class="form-control"
+          name="password"
+          required=""
+
+        />
+        <label class="form-label" for="form2Example2">Password</label>
+      </div>
+
+      <!-- Submit button -->
+      <button type="submit" class="btn btn-primary btn-block mb-4">
+        Sign in
+      </button>
+
+      <!-- Register buttons -->
+      <div class="text-center">
+        <p>
+          Not a member?
+          <a href="/register"
+            ><button type="button" class="btn btn-outline-info">
+              Register
+            </button>
+          </a>
+        </p>
+        <p>or sign up with:</p>
+        <button type="button" class="btn btn-link btn-floating mx-1">
+          <i class="fab fa-facebook-f"></i>
+        </button>
+
+        <button type="button" class="btn btn-link btn-floating mx-1">
+          <i class="fab fa-google"></i>
+        </button>
+
+        <button type="button" class="btn btn-link btn-floating mx-1">
+          <i class="fab fa-twitter"></i>
+        </button>
+
+        <button type="button" class="btn btn-link btn-floating mx-1">
+          <i class="fab fa-github"></i>
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

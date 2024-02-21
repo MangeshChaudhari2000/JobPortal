@@ -1,0 +1,88 @@
+<div class="detailedJobPage-Background" style="font-family: cursive">
+  <div class="p-1" style="width: 100%">
+    <%if(errorMessage.status==true){%>
+
+    <div class="alert alert-success alert-dismissible fade show" role="alert">
+      <%=errorMessage.message%>
+      <button
+        type="button"
+        class="btn-close"
+        data-bs-dismiss="alert"
+        aria-label="Close"
+      ></button>
+    </div>
+
+    <%}else if(errorMessage.status==false){%>
+    <div class="alert alert-danger alert-dismissible fade show" role="alert">
+      <%=errorMessage.message%>
+      <button
+        type="button"
+        class="btn-close"
+        data-bs-dismiss="alert"
+        aria-label="Close"
+      ></button>
+    </div>
+    <%}else{%> <%}%>
+  </div>
+  <div class="card px-4 mx-auto" style="width: 50rem">
+    <img src="https://files.codingninjas.com/web-banner-28759.png" alt="..." />
+    <div class="card-body mx-auto">
+      <h5 class="card-title">
+        <span style="color: red"> <%=jobInfo.jobdesignation%></span>
+        <span style="color: green">Oppurtunity in</span>
+        <span style="color: green"> <%=jobInfo.joblocation%></span>
+        <span style="color: green">at</span>
+        <span style="color: skyblue"><%=jobInfo.companyname%></span>
+      </h5>
+    </div>
+    <div style="color: rgb(18, 74, 119)">
+      <p>
+        <i class="fa-solid fa-location-dot"></i>
+        <%=jobInfo.joblocation%>
+      </p>
+      <p>
+        <i class="fa-solid fa-indian-rupee-sign"></i>
+        <%=jobInfo.salary%>
+      </p>
+      <p>
+        <i class="fa-solid fa-hourglass-end"></i>
+        Apply by <%=jobInfo.applyby%>
+      </p>
+      <p>
+        <i class="fa-solid fa-chart-simple"></i>
+        Number of openings <%=jobInfo.numberofopenings%>
+      </p>
+      <p>
+        <i class="fa-solid fa-user-tie"></i>
+        <a class="text-warning" href="/applicantPage/<%=jobInfo.ID%>">
+          <% if(Array.isArray(jobInfo.applicants)==true){%>
+          <%=jobInfo.applicants.length%> <% }else{%>
+          <p>0</p>
+          <% }%>
+        </a>
+      </p>
+    </div>
+    <br />
+    <p><%=jobInfo.skillsrequired%></p>
+    <div class="card-body d-flex justify-content-around pb-5">
+      <a href="/apply/<%=jobInfo.ID%>" class="card-link">
+        <button type="button" class="btn btn-outline-info">Apply Now</button>
+      </a>
+      <a href="#" class="card-link">
+        <button type="button" class="btn btn-success">
+          Posted on <%=jobInfo.jobposted%>
+        </button>
+      </a>
+      <% if(locals.userEmail){%>
+      <div class="d-flex justify-content-around">
+        <a href="/jobs/update/<%=jobInfo.ID%>" class="card-link">
+          <button type="button" class="btn btn-outline-warning">Update</button>
+        </a>
+        <a href="/jobs/delete/<%=jobInfo.ID%>" method="put" class="card-link">
+          <button type="button" class="btn btn-danger">delete</button>
+        </a>
+      </div>
+      <% }%>
+    </div>
+  </div>
+</div>
