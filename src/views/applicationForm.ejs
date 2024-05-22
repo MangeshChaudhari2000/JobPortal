@@ -1,19 +1,25 @@
-<form action="/apply/<%=locals.jobID%>" method="post" enctype="multipart/form-data"  >
-    <div class="mb-3">
-        <label for="exampleInputName" class="form-label">Name</label>
-        <input type="text" class="form-control" id="exampleInputName" name="name">
-      </div>
-    <div class="mb-3">
-      <label for="exampleInputEmail1" class="form-label">Email address</label>
-      <input type="email" class="form-control" id="exampleInputEmail1" name="email">
+<div class="container">
+  <div class=" row justify-content-center mt-4 p-2">
+    <div class="col-md-6">
+      <form action="/apply/<%=locals.jobID%>" method="post" enctype="multipart/form-data">
+        <div class="mb-3">
+          <label for="exampleInputName" class="form-label">Name</label>
+          <input type="text" class="form-control" id="exampleInputName" name="name">
+        </div>
+        <div class="mb-3">
+          <label for="exampleInputEmail1" class="form-label">Email address</label>
+          <input type="email" class="form-control" id="exampleInputEmail1" name="email">
+        </div>
+        <div class="mb-3">
+          <label for="exampleInputNumber" class="form-label">Contact</label>
+          <input type="number" class="form-control" id="exampleInputNumber" name="contact">
+        </div>
+        <div class="mb-3">
+          <label for="exampleInputResume" class="form-label">Resume</label>
+          <input type="file" class="form-control" id="exampleInputResume" name="resumePath">
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
     </div>
-    <div class="mb-3">
-      <label for="exampleInputNumber" class="form-label">Contact</label>
-      <input type="number" class="form-control" id="exampleInputNumber" name="contact">
-    </div>
-    <div class="mb-3">
-        <label for="exampleInputResume" class="form-label">Resume</label>
-        <input type="file" class="form-control" id="exampleInputResume" name="resumePath">
-      </div>
-    <button type="submit" class="btn btn-primary">Submit</button>
-  </form>
+  </div>
+</div>
